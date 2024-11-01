@@ -1,0 +1,219 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+    "name": "shopxpert/wishlist-table",
+    "category": "shopxpert-blocks",
+    "title": "WL: WooWishSuite Table",
+    "description":"Display Wishlist Table.",
+    "keywords": ["shopxpert","wishlist","table","wishlist"],
+    "render": "file:./index.php",
+    "attributes": {
+        "blockUniqId":{
+            "type": "string",
+            "default": ""
+        },
+        "areaPadding": {
+            "type": "object",
+            "default": {
+                "top":"",
+                "right":"",
+                "bottom":"",
+                "left":"",
+                "unit":"px",
+                "link":"yes"
+            },
+            "style" : {
+                "selector":"{{SHOPXPERT_WRAPPER}} { padding: {{areaPadding}}; }"
+            }
+        },
+        "areaBGProperty":{
+            "type": "object",
+            "default": {
+                "imageId": null,
+                "imageUrl":"",
+                "position": "",
+                "attachment": "",
+                "repeat": "",
+                "size": ""
+            },
+            "style" : {
+                "selector":"{{SHOPXPERT_WRAPPER}}"
+            }
+        },
+        "emptyTableText":{
+            "type":"string"
+        },
+
+        "headingColor":{
+            "type":"string",
+            "style" : {
+                "selector":"{{SHOPXPERT_WRAPPER}} .wishlist-table-content table thead > tr th{ color:{{headingColor}}; }"
+            }
+        },
+        "headingBGColor":{
+            "type":"string",
+            "style" : {
+                "selector":"{{SHOPXPERT_WRAPPER}} .wishlist-table-content table thead > tr th{ background-color:{{headingBGColor}}; }"
+            }
+        },
+        "headingBorder":{
+            "type":"object",
+            "style" : {
+                "selector":"{{SHOPXPERT_WRAPPER}} .wishlist-table-content table thead > tr"
+            }
+        },
+        "headingSize":{
+            "type":"string",
+            "style" : {
+                "selector":"{{SHOPXPERT_WRAPPER}} .wishlist-table-content table thead > tr th{ font-size:{{headingSize}}; }"
+            }
+        },
+
+        "tableBodyBorder":{
+            "type":"object",
+            "style" : {
+                "selector":"{{SHOPXPERT_WRAPPER}} .wishlist-table-content table,.wishlist-table-content table tbody > tr"
+            }
+        },
+
+        "titleSize":{
+            "type":"string",
+            "style" : {
+                "selector":"{{SHOPXPERT_WRAPPER}} .wishlist-table-content table tbody > tr td.wishlist-product-title{ font-size:{{titleSize}}; }"
+            }
+        },
+        "titleColor":{
+            "type":"string",
+            "style" : {
+                "selector":"{{SHOPXPERT_WRAPPER}} .wishlist-table-content table tbody > tr td.wishlist-product-title a{ color:{{titleColor}}; }"
+            }
+        },
+        "titleHoverColor":{
+            "type":"string",
+            "style" : {
+                "selector":"{{SHOPXPERT_WRAPPER}} .wishlist-table-content table tbody > tr td.wishlist-product-title a:hover{ color:{{titleHoverColor}}; }"
+            }
+        },
+
+        "priceSize":{
+            "type":"string",
+            "style" : {
+                "selector":"{{SHOPXPERT_WRAPPER}} .wishlist-table-content table tbody > tr td.wishlist-product-price{ font-size:{{priceSize}}; }"
+            }
+        },
+        "priceColor":{
+            "type":"string",
+            "style" : {
+                "selector":"{{SHOPXPERT_WRAPPER}} .wishlist-table-content table tbody > tr td.wishlist-product-price,{{SHOPXPERT_WRAPPER}} .wishlist-table-content table tbody > tr td.wishlist-product-price .woocommerce-Price-amount{ color:{{priceColor}}; }"
+            }
+        },
+
+        "quantityFieldSize":{
+            "type":"string",
+            "style" : {
+                "selector":"{{SHOPXPERT_WRAPPER}} .wishlist-table-content .quantity .qty{ font-size:{{quantityFieldSize}}; }"
+            }
+        },
+        "quantityFieldColor":{
+            "type":"string",
+            "style" : {
+                "selector":"{{SHOPXPERT_WRAPPER}} .wishlist-table-content .quantity .qty{ color:{{quantityFieldColor}}; }"
+            }
+        },
+        "quantityFieldBGColor":{
+            "type":"string",
+            "style" : {
+                "selector":"{{SHOPXPERT_WRAPPER}} .wishlist-table-content .quantity .qty{ background-color:{{quantityFieldBGColor}}; }"
+            }
+        },
+        "quantityFieldBorder":{
+            "type":"object",
+            "style" : {
+                "selector":"{{SHOPXPERT_WRAPPER}} .wishlist-table-content .quantity .qty"
+            }
+        },
+
+        "removeIconColor":{
+            "type":"string",
+            "style" : {
+                "selector":"{{SHOPXPERT_WRAPPER}} .wishlist-remove::before,{{SHOPXPERT_WRAPPER}} .wishlist-remove::after{ background-color:{{removeIconColor}}; }"
+            }
+        },
+        "removeIconHoverColor":{
+            "type":"string",
+            "style" : {
+                "selector":"{{SHOPXPERT_WRAPPER}} .wishlist-remove:hover::before,{{SHOPXPERT_WRAPPER}} .wishlist-remove:hover::after{ background-color:{{removeIconHoverColor}}; }"
+            }
+        },
+
+        "socialShareTitleSize":{
+            "type":"string",
+            "style" : {
+                "selector":"{{SHOPXPERT_WRAPPER}} .wishlist-social-share .wishlist-social-title{ font-size:{{socialShareTitleSize}}; }"
+            }
+        },
+        "socialShareTitleColor":{
+            "type":"string",
+            "style" : {
+                "selector":"{{SHOPXPERT_WRAPPER}} .wishlist-social-share .wishlist-social-title{ color:{{socialShareTitleColor}}; }"
+            }
+        },
+
+        "socialShareIconColor":{
+            "type":"string",
+            "style" : {
+                "selector":"{{SHOPXPERT_WRAPPER}} .wishlist-social-share ul li a{ color:{{socialShareIconColor}}; }"
+            }
+        },
+        "socialShareIconHoverColor":{
+            "type":"string",
+            "style" : {
+                "selector":"{{SHOPXPERT_WRAPPER}} .wishlist-social-share ul li a:hover{ color:{{socialShareIconHoverColor}}; }"
+            }
+        },
+        "socialShareIconSize":{
+            "type":"number",
+            "style" : {
+                "selector":"{{SHOPXPERT_WRAPPER}} .wishlist-social-share ul li a .wishlist-social-icon svg{ width:{{socialShareIconSize}}px;height:{{socialShareIconSize}}px; }"
+            }
+        },
+
+        "addToCartBtnSize":{
+            "type":"string",
+            "style" : {
+                "selector":"{{SHOPXPERT_WRAPPER}} .wishlist-table-content table .wishlist-addtocart{ font-size:{{addToCartBtnSize}}; }"
+            }
+        },
+        "addToCartBtnPadding": {
+            "type": "object",
+            "style" : {
+                "selector":"{{SHOPXPERT_WRAPPER}} .wishlist-table-content table .wishlist-addtocart{ padding:{{addToCartBtnPadding}}; }"
+            }
+        },
+        "addToCartBtnNormalColor":{
+            "type":"string",
+            "style" : {
+                "selector":"{{SHOPXPERT_WRAPPER}} .wishlist-table-content table .wishlist-addtocart{ color:{{addToCartBtnNormalColor}}; }"
+            }
+        },
+        "addToCartBtnNormalBGColor":{
+            "type":"string",
+            "style" : {
+                "selector":"{{SHOPXPERT_WRAPPER}} .wishlist-table-content table .wishlist-addtocart{ background-color:{{addToCartBtnNormalBGColor}}; }"
+            }
+        },
+        "addToCartBtnHoverColor":{
+            "type":"string",
+            "style" : {
+                "selector":"{{SHOPXPERT_WRAPPER}} .wishlist-table-content table .wishlist-addtocart:hover{ color:{{addToCartBtnHoverColor}}; }"
+            }
+        },
+        "addToCartBtnHoverBGColor":{
+            "type":"string",
+            "style" : {
+                "selector":"{{SHOPXPERT_WRAPPER}} .wishlist-table-content table .wishlist-addtocart:hover{ background-color:{{addToCartBtnHoverBGColor}}; }"
+            }
+        }
+
+    }
+}

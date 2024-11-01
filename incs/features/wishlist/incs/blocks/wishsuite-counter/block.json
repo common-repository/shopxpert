@@ -1,0 +1,116 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+    "name": "shopxpert/wishlist-counter",
+    "category": "shopxpert-blocks",
+    "title": "WL: WooWishSuite Counter",
+    "description":"Display Wishlist Counter.",
+    "keywords": ["shopxpert","wishlist","count","wishlist","wishlist counter"],
+    "render": "file:./index.php",
+    "attributes": {
+        "blockUniqId":{
+            "type": "string",
+            "default": ""
+        },
+        "areaPadding": {
+            "type": "object",
+            "default": {
+                "top":"",
+                "right":"",
+                "bottom":"",
+                "left":"",
+                "unit":"px",
+                "link":"yes"
+            },
+            "style" : {
+                "selector":"{{SHOPXPERT_WRAPPER}} { padding: {{areaPadding}}; }"
+            }
+        },
+        "areaBGProperty":{
+            "type": "object",
+            "default": {
+                "imageId": null,
+                "imageUrl":"",
+                "position": "",
+                "attachment": "",
+                "repeat": "",
+                "size": ""
+            },
+            "style" : {
+                "selector":"{{SHOPXPERT_WRAPPER}}"
+            }
+        },
+        "counterAfterText":{
+            "type":"string"
+        },
+
+        "contentAlign":{
+            "type":"string",
+            "style" : {
+                "selector":"{{SHOPXPERT_WRAPPER}} {text-align:{{contentAlign}};}"
+            }
+        },
+        "counterColor":{
+            "type":"string",
+            "style" : {
+                "selector":"{{SHOPXPERT_WRAPPER}} .wishlist-counter-area span.wishlist-counter{ color:{{counterColor}}!important; }"
+            }
+        },
+        "counterBGColor":{
+            "type":"string",
+            "style" : {
+                "selector":"{{SHOPXPERT_WRAPPER}} .wishlist-counter-area span.wishlist-counter{ background-color:{{counterBGColor}}!important; }"
+            }
+        },
+        "counterPadding": {
+            "type": "object",
+            "style" : {
+                "selector":"{{SHOPXPERT_WRAPPER}} .wishlist-counter-area span.wishlist-counter{ padding: {{counterPadding}}; }"
+            }
+        },
+        "counterBorderRadius": {
+            "type": "object",
+            "style" : {
+                "selector":"{{SHOPXPERT_WRAPPER}} .wishlist-counter-area span.wishlist-counter{ border-radius: {{counterBorderRadius}}; }"
+            }
+        },
+        "counterIconColor":{
+            "type":"string",
+            "style" : {
+                "selector":"{{SHOPXPERT_WRAPPER}} .wishlist-counter-area span.wishlist-counter-icon{ color:{{counterIconColor}}; }"
+            }
+        },
+
+        "counterTextColor":{
+            "type":"string",
+            "style" : {
+                "dependency": [
+                    [
+                        {
+                            "key": "counterAfterText", 
+                            "condition": "!=", 
+                            "value": ""
+                        }
+                    ]
+                ],
+                "selector":"{{SHOPXPERT_WRAPPER}} .wishlist-counter-area.wishlist-has-text{ color:{{counterTextColor}}; }"
+            }
+        },
+        "counterTextSize":{
+            "type":"string",
+            "style" : {
+                "dependency": [
+                    [
+                        {
+                            "key": "counterAfterText", 
+                            "condition": "!=", 
+                            "value": ""
+                        }
+                    ]
+                ],
+                "selector":"{{SHOPXPERT_WRAPPER}} .wishlist-counter-area.wishlist-has-text{ font-size:{{counterTextSize}}; }"
+            }
+        }
+
+    }
+}
